@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Time Game</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            position: relative; /* Ajouté pour le positionnement du bouton Restart */
+        }
+        #game-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        #target {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            display: none;
+            cursor: pointer;
+        }
+        #score, #timer {
+            position: fixed;
+            top: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        #score {
+            left: 20px;
+        }
+        #timer {
+            right: 20px;
+        }
+        #end-message {
+            display: none;
+            font-size: 36px;
+            color: #333;
+        }
+        #restart-button {
+            display: none;
+            position: absolute; /* Positionné en bas de la page */
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        #stats {
+            display: none;
+            position: fixed;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="score">Score: 0</div>
+    <div id="timer">Time: 0s</div>
+    <div id="game-container">
+        <div id="target"></div>
+    </div>
+    <div id="end-message">Game Over!</div>
+    <button id="restart-button">Restart</button>
+    <div id="stats">
+        <h2>Statistics</h2>
+        <p id="final-score"></p>
+        <p id="average-click-time"></p>
+        <p id="accuracy-rating"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
